@@ -327,7 +327,7 @@ a:link, a:visited {color: var(--accent);}
         $link = safe_link($w['link'] ?? '');
     ?>
     <div class="lline <?= $bg ?>">
-        <img src="assets/<?= $icon ?>"><?= htmlspecialchars($text) ?><?php if ($link !== ''): ?>, <a href="<?= htmlspecialchars($link) ?>"><?= htmlspecialchars($s['open_files']) ?></a><?php endif; ?>
+        <img src="assets/<?= $icon ?>"><?= htmlspecialchars($text) ?><?php if ($link !== ''): ?>,&nbsp;<a target="new" href="<?= htmlspecialchars($link) ?>"><?= htmlspecialchars($s['open_files']) ?></a><?php endif; ?>
     </div>
     <?php endforeach; ?>
     </div>
@@ -352,7 +352,7 @@ a:link, a:visited {color: var(--accent);}
         $link = safe_link($h['link'] ?? '');
     ?>
     <div class="lline <?= $bg ?>">
-        <img src="assets/<?= $icon ?>"><?= htmlspecialchars($text) ?><?php if ($link !== ''): ?>, <a href="<?= htmlspecialchars($link) ?>"><?= htmlspecialchars($s['open_files']) ?></a><?php endif; ?>
+        <img src="assets/<?= $icon ?>"><?= htmlspecialchars($text) ?><?php if ($link !== ''): ?>&nbsp;<a target="new" href="<?= htmlspecialchars($link) ?>"><?= htmlspecialchars($s['open_files']) ?></a><?php endif; ?>
     </div>
     <?php endforeach; ?>
     </div>
@@ -837,7 +837,7 @@ function itemLine(bg, icon, text, link) {
     let html = '<div class="lline ' + bg + '">' +
         '<img src="assets/' + icon + '">' + esc(text);
     if (link) {
-        html += ', <a href="' + esc(link) + '">' + esc(T.open_files) + '</a>';
+        html += ',&nbsp;<a target="new" href="' + esc(link) + '">' + esc(T.open_files) + '</a>';
     }
     return html + '</div>';
 }
